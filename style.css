@@ -422,12 +422,11 @@ nav {
     overflow-x: auto;
     padding-bottom: 1rem;
     margin-top: 3rem;
-    scroll-behavior: smooth;
 }
 
 .project {
     flex: 0 0 auto;
-    width: 400px; /* Fixed width so they don’t shrink */
+    width: 500px; /* Fixed width so they don’t shrink */
 }
 
 .project {
