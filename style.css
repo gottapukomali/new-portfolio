@@ -411,31 +411,10 @@ nav {
 
 .project-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 3rem;
 }
-.project-list {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 2rem;
-    overflow-x: auto;
-    margin-top: 3rem;
-
-    /* Hide scrollbar (optional) */
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-.project-list::-webkit-scrollbar {
-    display: none;
-}
-
-.project {
-    flex: 0 0 auto;
-    width: 400px;
-}
-
-
 .project {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
