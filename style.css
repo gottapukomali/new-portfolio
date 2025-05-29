@@ -1,3 +1,14 @@
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.project-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Force 4 in a row */
+  gap: 2rem;
+}
 
 /* Base styles */
 * {
