@@ -401,6 +401,17 @@ nav {
 .animate .progress {
     transform: translateX(0);
 }
+.projects {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  overflow-x: auto; /* This allows horizontal scrolling on smaller screens */
+  white-space: nowrap;
+}
+.project {
+  min-width: 200px; /* optional, makes each project box have a fixed width */
+  flex-shrink: 0;
+}
 
 /* Projects Section */
 .projects {
@@ -415,11 +426,24 @@ nav {
     gap: 2rem;
     margin-top: 3rem;
 }
-@media (max-width: 768px) {
-    .project-list {
-        grid-template-columns: 1fr;
-    }
+.projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
+
+@media (max-width: 768px) {
+  .projects {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .project {
+    flex-shrink: 0;
+    min-width: 200px;
+  }
+}
+
 .project {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 15px;
