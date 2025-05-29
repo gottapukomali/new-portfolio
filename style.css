@@ -401,97 +401,121 @@ nav {
 .animate .progress {
     transform: translateX(0);
 }
-.projects {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  overflow-x: auto; /* This allows horizontal scrolling on smaller screens */
-  white-space: nowrap;
-}
-.project {
-  min-width: 200px; /* optional, makes each project box have a fixed width */
-  flex-shrink: 0;
+/* Base Section Style */
+.projects-section {
+  padding: 8rem 10%;
+  text-align: center;
+  position: relative;
 }
 
-/* Projects Section */
-.projects {
-    padding: 8rem 10%;
-    text-align: center;
-    position: relative;
-}
-
+/* Project List: Grid on desktop, scrollable row on mobile */
 .project-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
-}
-.projects {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
+/* Individual Project Card */
+.project {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: 0.3s;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem;
+}
+
+/* Hover Effects */
+.project:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 0 20px #6b46c1;
+  border-color: #6b46c1;
+}
+
+/* Project Image Container */
+.project-img {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Gradient Overlay on Hover */
+.project-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(107, 70, 193, 0.2);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.project:hover .project-img::before {
+  opacity: 1;
+}
+
+/* Project Image Styling */
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.project:hover .project-img img {
+  transform: scale(1.1);
+}
+
+/* Project Titles and Text */
+.project h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.25rem;
+  color: #fff;
+}
+
+.project p {
+  color: #ddd;
+  font-size: 0.95rem;
+  padding: 0 1rem;
+}
+
+/* Button Style */
+.project .btn {
+  display: inline-block;
+  margin-top: 0.75rem;
+  background: #6b46c1;
+  color: #fff;
+  padding: 0.5rem 1.25rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.project .btn:hover {
+  background: #9f7aea;
+}
+
+/* Responsive Horizontal Scroll on Mobile */
 @media (max-width: 768px) {
-  .projects {
+  .project-list {
+    display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 1rem;
   }
 
   .project {
     flex-shrink: 0;
-    min-width: 200px;
+    min-width: 250px;
   }
 }
 
-.project {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    overflow: hidden;
-    transition: 0.3s;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.project:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 0 20px #6b46c1;
-    border-color: #6b46c1;
-}
-
-.project-img {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-}
-
-.project-img::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(107, 70, 193, 0.2);
-    opacity: 0;
-    transition: 0.3s;
-}
-
-.project:hover .project-img::before {
-    opacity: 1;
-}
-
-.project-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: 0.5s;
-}
-
-.project:hover .project-img img {
-    transform: scale(1.1);
-}
 
 /* Contact Section */
 .contact {
